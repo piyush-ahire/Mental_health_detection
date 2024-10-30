@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Services - Nova Bootstrap Template</title>
+  <title>Chatbot - Nova Bootstrap Template</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -15,7 +15,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,38 +27,84 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Nova
-  * Template URL: https://bootstrapmade.com/nova-bootstrap-business-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9f9f9;
+      color: #1b2f45;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px #1b2f45;
+      text-align: center;
+    }
+
+    #chatbot-container {
+      height: 500px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f1f1f1;
+      position: relative;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px 0;
+    }
+  </style>
 </head>
 
 <body>
 
-    <header>
-        <h2>Chat with Us</h2>
-    </header>
-    
-    <div class="container">
-        <h1>Welcome to Our Chatbot!</h1>
-        <p>Need help? Start a conversation with our virtual assistant below.</p>
-    
-        <!-- Chatbot Widget Placeholder -->
-        <div id="chatbot-container" style="height: 500px; border: 1px solid #ddd; border-radius: 10px; padding: 20px; text-align: center;">
-            <p>Loading chatbot...</p>
-            <!-- Replace with your chatbot widget integration script -->
-        </div>
+  <header>
+    <h2>Chat with Us</h2>
+  </header>
+
+  <div class="container">
+    <h1>Welcome to Our Chatbot!</h1>
+    <p>Need help? Start a conversation with our virtual assistant below.</p>
+
+    <!-- Chatbot Widget Placeholder -->
+    <div id="chatbot-container">
+      <p>Loading chatbot...</p>
+      <!-- Replace with your chatbot widget integration script -->
     </div>
-    
-    <footer>
-        <p>&copy; 2024 Business Name. All Rights Reserved.</p>
-    </footer>
-    
-    <!-- Example: Include your chatbot service's widget script here -->
-    <!-- <script src="https://your-chatbot-service.com/widget.js"></script> -->
-    
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Business Name. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Example: Include your chatbot service's widget script here -->
+  <!-- <script src="https://your-chatbot-service.com/widget.js"></script> -->
+
 </body>
-    
+
+</html>
