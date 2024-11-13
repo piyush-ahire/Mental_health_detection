@@ -27,6 +27,30 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style>
+    /* Flexbox layout for the map and info section */
+    .location-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .map {
+      flex: 1;  /* Map takes available space */
+      min-width: 50%; /* Ensure map is not too small */
+      height: 100%;
+    }
+
+    .info {
+      flex: 1;  /* Info takes available space */
+      min-width: 40%; /* Ensure info div has some width */
+    }
+
+    .info div {
+      margin-bottom: 20px;
+    }
+  </style>
+
   
 </head>
 
@@ -101,34 +125,34 @@
 
       <!-- Do your work here  -->
 
-      <div class="container">
-        <h1>Our Location</h1>
+      <div class="container" >
+        <h1 script = "text-align : center;">Our Location</h1>
     
+        <!-- Use Flexbox container for map and info divs -->
+      <div class="location-container">
+        <!-- Map -->
         <div class="map">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345086096!2d144.95373531531082!3d-37.81627917975159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1632425463870!5m2!1sen!2sus" 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-          </iframe>
+          <iframe src="" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1248.044867544553!2d73.76038450645639!3d18.645817845461337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9ef588fffff%3A0xed7869959e7d6300!2sDr.%20D.Y.%20Patil%20Institute%20of%20Engineering%2C%20Management%20and%20Research!5e0!3m2!1sen!2sin!4v1731519762397!5m2!1sen!2sin" width="100%" height="800%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
         </div>
-    
+
+
+        <!-- Info -->
         <div class="info">
           <div>
             <h3>Address</h3>
-            <p>123 Main Street<br>Melbourne, VIC 3000<br>Australia</p>
+            <p>Dr. D.Y. Patil Institute of Engineering, Management and Research<br>Pune</p>
           </div>
           <div>
             <h3>Contact</h3>
-            <p>Phone: +61 3 1234 5678<br>Email: info@business.com</p>
+            <p>Phone: 02027654470<br>Email: www.dypiemr.ac.in</p>
           </div>
           <div>
             <h3>Opening Hours</h3>
             <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
           </div>
         </div>
+      </div>
       </div>
 
     </div>
