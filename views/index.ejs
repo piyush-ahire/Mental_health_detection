@@ -1,0 +1,823 @@
+<%- include("partials/header.ejs") %>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Nova</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/" class="active">Home<br></a></li>
+          <li><a href="/about">About</a></li>
+           
+
+          <li class="dropdown"><a href="#"><span>Advisory</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="/advisory">E-books & Mental Health Relief</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#"><span>PsyBot</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="/bot">Get analysis of mental health</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#"><span>Psylocator</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="/locator">Find nearest psychiatrist</a></li>
+            </ul>
+          </li>
+
+          <!-- <li><a href="team.html">Team</a></li> -->
+          <li><a href="/blog">Blog</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> -->
+
+
+
+          <li><a href="/login">Login</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/mt1.jpg" alt="" data-aos="fade-in">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4">
+
+
+            <h1 data-aos="fade-up">We all have mental health</h1>
+            <blockquote data-aos="fade-up" data-aos-delay="100">
+              <p>Our emotional health can range from thriving to struggling. No matter what you’re experiencing, there are ways to take action to support yourself and those around you.</p>
+            </blockquote>
+            <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+              <a href="#about" class="btn-get-started">Get Started</a>
+              <a href="https://www.youtube.com/watch?v=G0zJGDokyWQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+ 
+
+    <!-- slider -->
+    <section id="why-us" class="why-us section">
+
+      <div class="container">
+
+        <div class="row g-0">
+
+          <div class="col-xl-5 img-bg" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/mt2.jpg" alt="">
+          </div>
+
+          <div class="col-xl-7 slides position-relative" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "centeredSlides": true,
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  },
+                  "navigation": {
+                    "nextEl": ".swiper-button-next",
+                    "prevEl": ".swiper-button-prev"
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper">
+
+                <!-- <div class="swiper-slide">
+                  <div class="item">
+                    <h3 class="mb-3">Let's grow your business together</h3>
+                    <h4 class="mb-3">Optio reiciendis accusantium iusto architecto at quia minima maiores quidem, dolorum.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, ipsam perferendis asperiores explicabo vel tempore velit totam, natus nesciunt accusantium dicta quod quibusdam ipsum maiores nobis non, eum. Ullam reiciendis dignissimos laborum aut, magni voluptatem velit doloribus quas sapiente optio.</p>
+                  </div>
+                </div>End slide item -->
+
+                <div class="swiper-slide">
+                  <div class="item">
+                    <h3 class="mb-3">Prioritize Your Mental Well-being</h3>
+                    <h4 class="mb-3">Mental health is essential for a balanced and fulfilling life.</h4>
+                    <p>Understanding and caring for our mental health can enhance our emotional resilience, improve relationships, and increase our ability to cope with stress. It is a fundamental part of our overall well-being, deserving of attention and care.</p>
+                  </div>
+                </div><!-- End slide item -->
+                
+                <div class="swiper-slide">
+                  <div class="item">
+                    <h3 class="mb-3">Recognize the Signs</h3>
+                    <h4 class="mb-3">Awareness of mental health issues is the first step towards healing.</h4>
+                    <p>Signs like persistent sadness, anxiety, and social withdrawal can signal that it's time to seek support. Addressing these feelings early can lead to better outcomes, reminding us that mental health care is as vital as physical health care.</p>
+                  </div>
+                </div><!-- End slide item -->
+                
+                <div class="swiper-slide">
+                  <div class="item">
+                    <h3 class="mb-3">Support and Seek Help</h3>
+                    <h4 class="mb-3">Reaching out for support can make all the difference.</h4>
+                    <p>No one should face mental health challenges alone. Seeking help from a trusted friend, counselor, or mental health professional can provide relief and open pathways to healing, helping us build resilience and regain peace.</p>
+                  </div>
+                </div><!-- End slide item -->
+                
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Why Us Section -->
+
+
+
+
+
+  <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Advisory</h2>
+        <p>What you feeling & experiencing</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <!-- <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-briefcase" style="color: #f57813;"></i></div>
+            <div>
+              <h4 class="title">Lorem Ipsum</h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <a href="#" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          End Service Item -->
+
+
+
+
+
+
+
+<!-- Service Item -->
+<!-- angry -->
+<div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+  <div class="icon flex-shrink-0">
+      <!-- Custom Icon Image -->
+       
+      <img src="assets/img/icon/anger.png" alt="Icon" class="icon-image" style="width: 35px; height: 35px;">
+  </div>
+  <div class="content ms-2">
+      <h4 class="title">Angry</h4>
+      <p class="description">We all get mad and annoyed sometimes. It’s natural. But when those emotions happen way too often, they can be distracting, stressful, and we need to manage them before things get worse</p>
+      <!-- Trigger for Modal -->
+      <a href="#" class="readmore stretched-link" data-bs-toggle="modal" data-bs-target="#learnMoreModal"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+  </div>
+</div>
+<!-- End Service Item -->
+
+<!-- Modal Structure -->
+<div class="modal fade" id="learnMoreModal" tabindex="-1" aria-labelledby="learnMoreModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+               
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <!-- Additional content goes here -->
+              <p>We all get angry. It’s a normal, natural response to feeling hurt or threatened by situations, other people, and sometimes even ourselves. Anger isn’t always bad. It can motivate us to solve problems, make changes and improve our lives. While we can’t always predict or control our emotional reactions, we can manage our response.
+              </p>
+
+
+              <div class="c-FiftyFiftyCard container">
+                <div class="row align-items-center">
+                    <!-- Left Side Image -->
+                    <div class="col-6 col-md-4">
+                        <a href="https://www.youtube.com/watch?v=cZJAsW_5SRA" target="_blank" class="c-CardHighlight t-link">
+                            <div class="c-CardHighlight-img" style="width: 100%; height: 0; padding-top: 75%; position: relative; overflow: hidden; border-radius: 8px; background-color: #f2f2f2;">
+                                <img class="c-CardHighlight-img-inner" src="https://s3.amazonaws.com/mentalhealthishealth.com-production/wp-content/uploads/2021/04/27004256/Placeholder_Red.png" alt="Meditation image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                        </a>
+                    </div>
+            
+                    <!-- Right Side Content -->
+                    <div class="col-6 col-md-8">
+                        <div class="c-FiftyFiftyCard-content">
+                             
+                            <h4 class="c-CardHighlight-title t-h4">Try Meditation to Get Relief</h4>
+                            <div class="t-wysiwyg t-text--lg">
+                                <p>A reactive state can make it tough to make sound decisions. The best thing to do is to breathe, and if possible, step away from the cause of our anger. That’s how we gain perspective and start to find solutions.</p>
+                            </div>
+                            <!-- Button Section -->
+                            <div class="t-btn-primary mt-3">
+                                <a href="https://www.youtube.com/watch?v=cZJAsW_5SRA" target="_blank" class="btn btn-primary">Try it now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+           
+
+
+
+
+
+<!-- Anxious Item -->
+<div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+  <div class="icon flex-shrink-0">
+    <!-- Custom Icon Image for Anxious -->
+    <img src="assets/img/icon/stress.png" alt="Icon" class="icon-image" style="width: 35px; height: 35px;">
+  </div>
+  <div class="content ms-2">
+    <h4 class="title">Anxious</h4>
+    <p class="description">Many people struggle with feelings of anxiety. But we can work through and overcome those feelings to make the most of work, school, relationships and life</p>
+    <!-- Trigger for Modal -->
+    <a href="#" class="readmore stretched-link" data-bs-toggle="modal" data-bs-target="#anxiousModal"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+  </div>
+</div>
+<!-- End Service Item -->
+
+<!-- Modal Structure for Anxious -->
+<div class="modal fade" id="anxiousModal" tabindex="-1" aria-labelledby="anxiousModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         
+        <p>Anxiety is a normal emotion that evolved as an age-old survival instinct from when humans faced frequent threats. That response to stressful situations still exists inside all of us, and it can be overwhelming. If anxiety starts to interfere with our ability to enjoy life, it’s time to manage those feelings in a healthy way.</p>
+
+        <div class="c-FiftyFiftyCard container">
+          <div class="row align-items-center">
+            <!-- Left Side Image -->
+            <div class="col-6 col-md-4">
+              <a href="https://www.youtube.com/watch?v=c1Ndym-IsQg" target="_blank" class="c-CardHighlight t-link">
+                <div class="c-CardHighlight-img" style="width: 100%; height: 0; padding-top: 75%; position: relative; overflow: hidden; border-radius: 8px; background-color: #f2f2f2;">
+                  <img class="c-CardHighlight-img-inner" src="https://s3.amazonaws.com/mentalhealthishealth.com-production/wp-content/uploads/2021/04/27004257/Placeholder_Yellow.png" alt="Anxiety relief" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                </div>
+              </a>
+            </div>
+
+            <!-- Right Side Content -->
+            <div class="col-6 col-md-8">
+              <div class="c-FiftyFiftyCard-content">
+                <h4 class="c-CardHighlight-title t-h4">Try Breathing Exercises</h4>
+                <div class="t-wysiwyg t-text--lg">
+                  <p>Practicing deep breathing exercises can be a simple yet effective way to calm the mind and reduce feelings of anxiety. Take a few moments to breathe slowly and deeply, focusing on the rhythm.</p>
+                </div>
+                <!-- Button Section -->
+                <div class="t-btn-primary mt-3">
+                  <a href="https://www.youtube.com/watch?v=c1Ndym-IsQg" target="_blank" class="btn btn-primary">Try it now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Sad Item -->
+<div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+  <div class="icon flex-shrink-0">
+    <!-- Custom Icon Image for Sad -->
+    <img src="assets/img/icon/sad.png" alt="Icon" class="icon-image" style="width: 35px; height: 35px;">
+  </div>
+  <div class="content ms-2">
+    <h4 class="title">Sad</h4>
+    <p class="description">Feeling down from time to time is part of life, but there are ways to find light and lift your spirits when sadness feels overwhelming.</p>
+    <!-- Trigger for Modal -->
+    <a href="#" class="readmore stretched-link" data-bs-toggle="modal" data-bs-target="#sadModal"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+  </div>
+</div>
+<!-- End Service Item -->
+
+<!-- Modal Structure for Sad -->
+<div class="modal fade" id="sadModal" tabindex="-1" aria-labelledby="sadModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title" id="sadModalLabel">Managing Sadness</h4>
+        <p>Sadness is a natural response to life's challenges. Allow yourself to feel it, but know there are simple actions to help you cope and feel better.</p>
+
+        <div class="c-FiftyFiftyCard container">
+          <div class="row align-items-center">
+            <!-- Left Side Image -->
+            <div class="col-6 col-md-4">
+              <a href="https://www.youtube.com/watch?v=cEqZthCaMpo" target="_blank" class="c-CardHighlight t-link">
+                <div class="c-CardHighlight-img" style="width: 100%; height: 0; padding-top: 75%; position: relative; overflow: hidden; border-radius: 8px; background-color: #f2f2f2;">
+                  <img class="c-CardHighlight-img-inner" src="https://s3.amazonaws.com/mentalhealthishealth.com-production/wp-content/uploads/2021/04/27004254/Placeholder_Green.png" alt="Sadness relief" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                </div>
+              </a>
+            </div>
+
+            <!-- Right Side Content -->
+            <div class="col-6 col-md-8">
+              <div class="c-FiftyFiftyCard-content">
+                <h4 class="c-CardHighlight-title t-h4">Practice Gratitude to Lift Your Spirits</h4>
+                <div class="t-wysiwyg t-text--lg">
+                  <p>Reflecting on moments or people you're grateful for can ease sadness. Take a few minutes to write down things you're thankful for to shift your focus to the positive.</p>
+                </div>
+                <!-- Button Section -->
+                <div class="t-btn-primary mt-3">
+                  <a href="https://www.youtube.com/watch?v=cEqZthCaMpo" target="_blank" class="btn btn-primary">Try it now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hopeless Item -->
+<div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+  <div class="icon flex-shrink-0">
+    <img src="assets/img/icon/hopelessness.png" alt="Hopeless Icon" class="icon-image" style="width: 35px; height: 35px;">
+  </div>
+  <div class="content ms-2">
+    <h4 class="title">Hopeless</h4>
+    <p class="description">Feeling hopeless can be overwhelming, but small steps can help bring back a sense of purpose and control in life.</p>
+    <a href="#" class="readmore stretched-link" data-bs-toggle="modal" data-bs-target="#hopelessModal"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+  </div>
+</div>
+
+<!-- Modal Structure for Hopeless -->
+<div class="modal fade" id="hopelessModal" tabindex="-1" aria-labelledby="hopelessModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title" id="hopelessModalLabel">Finding Hope Again</h4>
+        <p>When everything feels pointless, remember that small actions can create change. Starting with small goals can bring a sense of achievement.</p>
+
+        <div class="c-FiftyFiftyCard container">
+          <div class="row align-items-center">
+            <div class="col-6 col-md-4">
+              <a href="https://www.youtube.com/embed/NmLa7KFa1MQ" target="_blank" class="c-CardHighlight t-link">
+                <div class="c-CardHighlight-img" style="width: 100%; padding-top: 75%; position: relative; overflow: hidden; border-radius: 8px; background-color: #f2f2f2;">
+                  <img class="c-CardHighlight-img-inner" src="https://s3.amazonaws.com/mentalhealthishealth.com-production/wp-content/uploads/2021/04/27004256/Placeholder_Red.png" alt="Hopelessness relief" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                </div>
+              </a>
+            </div>
+
+            <div class="col-6 col-md-8">
+              <h4>Set Small Goals to Regain Purpose</h4>
+              <p>Break big challenges into smaller, manageable goals. Achieving even small tasks can restore a sense of purpose and hope.</p>
+              <div class="t-btn-primary mt-3">
+                <a href="https://www.youtube.com/embed/NmLa7KFa1MQ" target="_blank" class="btn btn-primary">Try it now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Lonely Item -->
+<div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
+  <div class="icon flex-shrink-0">
+    <img src="assets/img/icon/lonely.png" alt="Lonely Icon" class="icon-image" style="width: 35px; height: 35px;">
+  </div>
+  <div class="content ms-2">
+    <h4 class="title">Lonely</h4>
+    <p class="description">Loneliness can feel isolating, but connecting with others or engaging in activities can help bring comfort.</p>
+    <a href="#" class="readmore stretched-link" data-bs-toggle="modal" data-bs-target="#lonelyModal"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+  </div>
+</div>
+
+<!-- Modal Structure for Lonely -->
+<div class="modal fade" id="lonelyModal" tabindex="-1" aria-labelledby="lonelyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title" id="lonelyModalLabel">Overcoming Loneliness</h4>
+        <p>Feeling lonely can be difficult, but connecting with others or engaging in meaningful activities can help.</p>
+
+        <div class="c-FiftyFiftyCard container">
+          <div class="row align-items-center">
+            <div class="col-6 col-md-4">
+              <a href="https://www.youtube.com/watch?v=Mqqxi8mt4t0" target="_blank" class="c-CardHighlight t-link">
+                <div class="c-CardHighlight-img" style="width: 100%; padding-top: 75%; position: relative; overflow: hidden; border-radius: 8px; background-color: #f2f2f2;">
+                  <img class="c-CardHighlight-img-inner" src="https://s3.amazonaws.com/mentalhealthishealth.com-production/wp-content/uploads/2021/04/27004254/Placeholder_Green.png" alt="Loneliness relief" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                </div>
+              </a>
+            </div>
+
+            <div class="col-6 col-md-8">
+              <h4>Connect with Others</h4>
+              <p>Reaching out to someone or engaging in a community activity can help alleviate feelings of loneliness.</p>
+              <div class="t-btn-primary mt-3">
+                <a href="https://www.youtube.com/watch?v=Mqqxi8mt4t0" target="_blank" class="btn btn-primary">Try it now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Stressed Item -->
+<div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
+  <div class="icon flex-shrink-0">
+    <img src="assets/img/icon/stressed.png" alt="Stressed Icon" class="icon-image" style="width: 35px; height: 35px;">
+  </div>
+  <div class="content ms-2">
+    <h4 class="title">Stressed</h4>
+    <p class="description">Stress can feel like a heavy load, but there are ways to manage it and find balance.</p>
+    <a href="#" class="readmore stretched-link" data-bs-toggle="modal" data-bs-target="#stressedModal"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+  </div>
+</div>
+
+<!-- Modal Structure for Stressed -->
+<div class="modal fade" id="stressedModal" tabindex="-1" aria-labelledby="stressedModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title" id="stressedModalLabel">Managing Stress</h4>
+        <p>Stress is a common part of life. Practicing relaxation techniques can help you better manage it.</p>
+
+        <div class="c-FiftyFiftyCard container">
+          <div class="row align-items-center">
+            <div class="col-6 col-md-4">
+              <a href="https://www.youtube.com/watch?v=c1Ndym-IsQg" target="_blank" class="c-CardHighlight t-link">
+                <div class="c-CardHighlight-img" style="width: 100%; padding-top: 75%; position: relative; overflow: hidden; border-radius: 8px; background-color: #f2f2f2;">
+                  <img class="c-CardHighlight-img-inner" src="https://s3.amazonaws.com/mentalhealthishealth.com-production/wp-content/uploads/2021/04/27004254/Placeholder_Green.png" alt="Stress relief" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                </div>
+              </a>
+            </div>
+
+            <div class="col-6 col-md-8">
+              <h4>Practice Deep Breathing</h4>
+              <p>Deep breathing exercises are effective for reducing stress and improving mental clarity.</p>
+              <div class="t-btn-primary mt-3">
+                <a href="https://www.youtube.com/watch?v=c1Ndym-IsQg" target="_blank" class="btn btn-primary">Try it now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ 
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+
+
+
+
+
+
+
+
+
+<!-- Call To Action Section -->
+<section id="call-to-action" class="call-to-action section dark-background">
+  <img src="assets/img/bg_mh.jpg" alt="Background Image" style="width: 100%; height: auto; opacity: 0.5;">
+
+  <div class="container">
+    <div class="row justify-content-center text-center" data-aos="zoom-in" data-aos-delay="100">
+      <div class="col-xl-10">
+        <h3 class="text-white mb-4">Take Charge of Your Mental Health</h3>
+        <p class="text-white mb-4">
+          Mental health is a vital part of our overall well-being. Taking steps to manage mental health can lead to improved emotional resilience, better relationships, and enhanced quality of life. Whether you're feeling overwhelmed, stressed, or simply want a mental health check-up, resources are available to support you.
+        </p>
+        <div class="cta-buttons d-flex justify-content-center gap-3 mt-4">
+          <!-- PsyBot Button -->
+          <a class="cta-btn btn btn-primary" href="/bot" style="padding: 10px 20px; font-size: 1.1em;">
+            Get Mental Health Assessment with PsyBot
+          </a>
+
+          <!-- PsyLocator Button -->
+          <a class="cta-btn btn btn-secondary" href="/locator" style="padding: 10px 20px; font-size: 1.1em;">
+            Locate Nearest Psychiatrist with PsyLocator
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /Call To Action Section -->
+
+
+
+
+
+
+
+
+
+    
+
+ <!-- Features Section -->
+<section id="features" class="features section">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="mb-0">Empowering Features for</h3>
+        <h3>Your Mental Well-being</h3>
+
+        <div class="row gy-4">
+
+          <div class="col-md-6">
+            <div class="icon-list d-flex">
+              <i class="bi bi-heart-pulse" style="color: #ff8b2c;"></i>
+              <span>Personalized Mental Health Assessment</span>
+            </div>
+          </div><!-- End Icon List Item-->
+
+          <div class="col-md-6">
+            <div class="icon-list d-flex">
+              <i class="bi bi-chat-dots" style="color: #5578ff;"></i>
+              <span>24/7 Chat Support with PsyBot</span>
+            </div>
+          </div><!-- End Icon List Item-->
+
+          <div class="col-md-6">
+            <div class="icon-list d-flex">
+              <i class="bi bi-map" style="color: #e80368;"></i>
+              <span>Find Nearby Psychiatrists with PsyLocator</span>
+            </div>
+          </div><!-- End Icon List Item-->
+
+          <div class="col-md-6">
+            <div class="icon-list d-flex">
+              <i class="bi bi-journal-check" style="color: #ffa76e;"></i>
+              <span>Daily Mood and Progress Tracking</span>
+            </div>
+          </div><!-- End Icon List Item-->
+
+          <div class="col-md-6">
+            <div class="icon-list d-flex">
+              <i class="bi bi-music-note-beamed" style="color: #11dbcf;"></i>
+              <span>Relaxing and Guided Meditation</span>
+            </div>
+          </div><!-- End Icon List Item-->
+
+          <div class="col-md-6">
+            <div class="icon-list d-flex">
+              <i class="bi bi-lightbulb" style="color: #4233ff;"></i>
+              <span>Expert Mental Health Tips</span>
+            </div>
+          </div><!-- End Icon List Item-->
+
+          <div class="col-md-6">
+            <div class="icon-list d-flex">
+              <i class="bi bi-people" style="color: #29cc61;"></i>
+              <span>Join a Supportive Community</span>
+            </div>
+          </div><!-- End Icon List Item-->
+
+          <div class="col-md-6">
+            <div class="icon-list d-flex">
+              <i class="bi bi-bar-chart" style="color: #ff5828;"></i>
+              <span>Analyze Mental Health Insights</span>
+            </div>
+          </div><!-- End Icon List Item-->
+
+        </div>
+      </div>
+      <div class="col-lg-5 position-relative" data-aos="zoom-out" data-aos-delay="200">
+        <div class="phone-wrap" style="max-width: 440px; overflow: hidden; height: 889px;">
+          <img src="assets/img/counselling.jpg" alt="Mental Health App" 
+               style="width: 100%; height: auto; max-height: 889px; object-fit: cover;">
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+
+  <div class="details">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <h4>Enhance Your Mental Wellness</h4>
+          <p>
+            Our platform provides tailored support, practical tools, and easy access to mental health professionals. Discover resources to build resilience, find inner peace, and connect with others on a similar journey.
+          </p>
+          <a href="#about" class="btn-get-started">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section><!-- /Features Section -->
+
+
+    <!-- Recent Posts Section -->
+    <section id="recent-posts" class="recent-posts section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Recent Blog Posts</h2>
+
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="post-box">
+              <div class="post-img"><img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt=""></div>
+              <div class="meta">
+                <span class="post-date">Tue, December 12</span>
+                <span class="post-author"> / Julia Parker</span>
+              </div>
+              <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis</h3>
+              <p>Illum voluptas ab enim placeat. Adipisci enim velit nulla. Vel omnis laudantium. Asperiores eum ipsa est officiis. Modi qui magni est...</p>
+              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="post-box">
+              <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
+              <div class="meta">
+                <span class="post-date">Fri, September 05</span>
+                <span class="post-author"> / Mario Douglas</span>
+              </div>
+              <h3 class="post-title">Et repellendus molestiae qui est sed omnis</h3>
+              <p>Voluptatem nesciunt omnis libero autem tempora enim ut ipsam id. Odit quia ab eum assumenda. Quisquam omnis doloribus...</p>
+              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="post-box">
+              <div class="post-img"><img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt=""></div>
+              <div class="meta">
+                <span class="post-date">Tue, July 27</span>
+                <span class="post-author"> / Lisa Hunter</span>
+              </div>
+              <h3 class="post-title">Quia assumenda est et veritati</h3>
+              <p>Quia nam eaque omnis explicabo similique eum quaerat similique laboriosam. Quis omnis repellat sed quae consectetur magnam...</p>
+              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="post-box">
+              <div class="post-img"><img src="assets/img/blog/blog-4.jpg" class="img-fluid" alt=""></div>
+              <div class="meta">
+                <span class="post-date">Tue, Sep 16</span>
+                <span class="post-author"> / Mario Douglas</span>
+              </div>
+              <h3 class="post-title">Pariatur quia facilis similique deleniti</h3>
+              <p>Et consequatur eveniet nam voluptas commodi cumque ea est ex. Aut quis omnis sint ipsum earum quia eligendi...</p>
+              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Recent Posts Section -->
+
+  </main>
+
+<%- include("partials/footer.ejs") %>
