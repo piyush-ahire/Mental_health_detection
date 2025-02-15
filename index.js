@@ -77,6 +77,10 @@ app.get("/userblog", (req, res) => {
   res.render("userblog.ejs");
 });
 
+app.get("/profile", (req, res) => {
+  res.render("profile.ejs");
+});
+
 
 
 
