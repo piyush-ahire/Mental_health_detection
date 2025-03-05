@@ -78,6 +78,145 @@
     <div>
 
       <!-- Do your work here  -->
+      <div id="chat-container" style="max-width: 400px; margin: auto; border-radius: 15px; padding: 15px; background-color: #f0f8ff; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+        <h2 style="text-align: center; color: #004085;">Mental Health Chatbot</h2>
+        <div id="chatbox" style="height: 350px; overflow-y: auto; padding: 10px; background: #ffffff; border-radius: 10px; border: 1px solid #ccc;"></div>
+        <div style="display: flex; margin-top: 10px;">
+            <input type="text" id="user-input" placeholder="Ask me anything..." 
+                style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;">
+            <button id="send-button" style="padding: 10px; margin-left: 5px; background: #004085; color: white; border: none; border-radius: 5px; cursor: pointer;">Send</button>
+            <button id="voice-button" style="padding: 10px; margin-left: 5px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">🎤</button>
+        </div>
+    </div>
+    
+    <script>
+        const chatbox = document.getElementById("chatbox");
+        const userInput = document.getElementById("user-input");
+        const sendButton = document.getElementById("send-button");
+    
+        const synth = window.speechSynthesis;
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.continuous = false;
+        recognition.lang = "en-US";
+    
+        const responses = {
+        "hello": "Hi there! How can I assist you with your mental health today?",
+        "how are you": "I'm here to support you. How are you feeling?",
+        "what is mental health": "Mental health includes emotional, psychological, and social well-being. It affects how we think, feel, and behave.",
+        "why is mental health important": "Good mental health helps us handle stress, build relationships, and make decisions.",
+        "what is depression": "Depression is a mental health disorder that causes persistent sadness and loss of interest. Therapy and support can help.",
+        "what are the signs of depression": "Signs include persistent sadness, loss of interest, fatigue, sleep changes, and feelings of hopelessness.",
+        "what is anxiety": "Anxiety is excessive worry or fear that can interfere with daily life. Deep breathing and mindfulness can help manage it.",
+        "how to reduce stress": "Try relaxation techniques, deep breathing, meditation, or talking to a trusted person.",
+        "how to stop overthinking": "Overthinking can cause stress. Try journaling, mindfulness, or engaging in a hobby to refocus your mind.",
+        "how to improve mental health": "Self-care, exercise, social connections, and professional help can improve mental health.",
+        "what is self-care": "Self-care means taking time to do things that improve your well-being, like hobbies, rest, and healthy habits.",
+        "how to sleep better": "Maintain a regular sleep schedule, avoid screens before bed, and create a relaxing bedtime routine.",
+        "how to deal with loneliness": "Stay connected with friends, join social groups, and engage in activities that bring you joy.",
+        "how to calm anxiety attacks": "Take slow deep breaths, ground yourself with the 5-4-3-2-1 technique, and reassure yourself that it will pass.",
+        "what to do when feeling overwhelmed": "Take a break, practice deep breathing, prioritize tasks, and talk to someone about your feelings.",
+        "how to be happy": "Happiness comes from gratitude, meaningful relationships, self-care, and personal growth.",
+        "how to help someone with anxiety": "Listen without judgment, encourage them to breathe deeply, and offer support without pressuring them.",
+        "how to stay motivated": "Set small goals, track progress, celebrate wins, and stay connected with supportive people.",
+        "how to stop negative thoughts": "Challenge negative thoughts with logic, practice self-compassion, and focus on positive experiences.",
+        "how to boost confidence": "Confidence comes from self-acceptance, practice, and positive self-talk.",
+        "what to do when feeling hopeless": "Reach out to a friend, journal your thoughts, and remind yourself that feelings are temporary.",
+        "does social media affect mental health": "Yes, excessive social media use can contribute to anxiety, depression, and low self-esteem.",
+        "thank you": "You're welcome! Take care of yourself.",
+        "bye": "Goodbye! Stay strong and reach out if you need help."
+        };
+    
+        function appendMessage(sender, message) {
+            const messageElement = document.createElement("div");
+            messageElement.style.margin = "8px";
+            messageElement.style.padding = "10px";
+            messageElement.style.borderRadius = "10px";
+            messageElement.style.fontSize = "14px";
+            messageElement.style.opacity = "0";
+            messageElement.style.transition = "opacity 0.5s ease-in-out";
+    
+            if (sender === "user") {
+                messageElement.style.textAlign = "right";
+                messageElement.style.color = "white";
+                messageElement.style.background = "#007bff";
+                messageElement.style.alignSelf = "flex-end";
+            } else {
+                messageElement.style.textAlign = "left";
+                messageElement.style.color = "#333";
+                messageElement.style.background = "#f8f9fa";
+                messageElement.style.border = "1px solid #ccc";
+            }
+    
+            messageElement.innerText = message;
+            chatbox.appendChild(messageElement);
+            chatbox.scrollTop = chatbox.scrollHeight;
+    
+            setTimeout(() => {
+                messageElement.style.opacity = "1";
+            }, 100);
+    
+            if (sender === "bot") speakMessage(message);
+        }
+    
+        function processUserInput(input) {
+            const userMessage = input.toLowerCase();
+            
+            let botResponse = "I'm not sure about that. Consider speaking with a professional.";
+            
+            // Check for exact matches
+            if (responses[userMessage]) {
+                botResponse = responses[userMessage];
+            } else {
+                // Try finding a similar question
+                for (let key in responses) {
+                    if (userMessage.includes(key)) {
+                        botResponse = responses[key];
+                        break;
+                    }
+                }
+            }
+    
+            appendMessage("user", input);
+            setTimeout(() => appendMessage("bot", botResponse), 800);
+        }
+    
+        sendButton.addEventListener("click", () => {
+            const input = userInput.value.trim();
+            if (input) {
+                processUserInput(input);
+                userInput.value = "";
+            }
+        });
+    
+        userInput.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                sendButton.click();
+            }
+        });
+    
+        function speakMessage(message) {
+            const utterance = new SpeechSynthesisUtterance(message);
+            utterance.lang = "en-US";
+            synth.speak(utterance);
+        }
+    
+        document.getElementById("voice-button").addEventListener("click", () => {
+        userInput.placeholder = "Recognizing...";
+        recognition.start();
+        });
+
+        recognition.onresult = (event) => {
+          const speechResult = event.results[0][0].transcript;
+          userInput.value = speechResult;
+          sendButton.click();
+        };
+
+        recognition.onend = () => {
+          userInput.placeholder = "Ask me anything...";
+        };
+
+    </script>
+    
 
     </div>
 
