@@ -8,7 +8,7 @@
 
       <a href="/" class="logo d-flex align-items-center">
          
-        <h1 class="sitename">Nova</h1>
+        <h1 class="sitename">MindCare</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -25,7 +25,8 @@
 
           <li class="dropdown"><a href="#"><span>PsyBot</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="/bot">Get analysis of mental health</a></li>
+              <li><a href="/bot">Mental health analysis chatbot</a></li>
+              <li><a href="#">Mental health assesment & analysis</a></li>
             </ul>
           </li>
 
@@ -75,11 +76,21 @@
      
 
 
-    <div>
-
-      <!-- Do your work here  -->
-
+    <div class="container d-flex justify-content-center" style="margin-top: 120px;">
+      <div class="col-md-8">
+        <section id="portfolio" class="portfolio sections-bg" style="height: 100%; padding: 30px; background: #f8f9fa; border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+          <div class="container" data-aos="fade-up">
+            <div class="section-header text-center">
+              <h2 class="mb-4" style="font-weight: bold;">Find Nearest Psychiatrist</h2>
+              <p class="mb-4">Click the button below to find the nearest location based on your current location:</p>
+              <button onclick="findNearestLocation()" style="padding: 10px 20px; background-color: #3b82f6; color: white; border: none; border-radius: 8px; font-size: 16px;">Find Nearest Location</button>
+            </div>
+            <div id="result" class="text-center mt-4" style="font-size: 18px;"></div>
+          </div>
+        </section>
+      </div>
     </div>
+    
 
 
      

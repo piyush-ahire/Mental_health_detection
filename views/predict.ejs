@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ML Prediction</title>
+</head>
+<body>
+  <h1>Predict Using Mental Health Model</h1>
+  <form id="predict-form">
+    <label for="f1">Feature 1: </label>
+    <input type="number" id="f1" step="any" required><br><br>
+
+    <label for="f2">Feature 2: </label>
+    <input type="number" id="f2" step="any" required><br><br>
+
+    <label for="f3">Feature 3: </label>
+    <input type="number" id="f3" step="any" required><br><br>
+
+    <button type="submit">Predict</button>
+  </form>
+
+  <h2 id="result"></h2>
+
+  <script>
+    document.getElementById('predict-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const inputData = [
+        parseFloat(document.getElementById('f1').value),
+        parseFloat(document.getElementById('f2').value),
+        parseFloat(document.getElementById('f3').value)
+      ];
+
+      try {
+        const response = await fetch('http://localhost:5000/predict', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ input: inputData })
+        });
+
+        const result = await response.json();
+        document.getElementById('result').innerText = "Prediction: " + result.prediction;
+      } catch (error) {
+        console.error("Prediction failed:", error);
+        document.getElementById('result').innerText = "Error occurred while predicting.";
+      }
+    });
+  </script>
+</body>
+</html>

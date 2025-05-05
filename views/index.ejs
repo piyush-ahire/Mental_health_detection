@@ -8,7 +8,7 @@
       <a href="/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Nova</h1>
+        <h1 class="sitename">MindCare</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -75,19 +75,30 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-4">
-
-
             <h1 data-aos="fade-up">We all have mental health</h1>
             <blockquote data-aos="fade-up" data-aos-delay="100">
               <p>Our emotional health can range from thriving to struggling. No matter what you’re experiencing, there are ways to take action to support yourself and those around you.</p>
             </blockquote>
             <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-              <a href="#about" class="btn-get-started">Get Started</a>
-              <a href="https://www.youtube.com/watch?v=G0zJGDokyWQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+              <a href="javascript:void(0);" class="btn-get-started" id="scrollBtn">Get Started</a>
+              <a href="https://www.youtube.com/watch?v=G0zJGDokyWQ" class="glightbox btn-watch-video d-flex align-items-center">
+                <i class="bi bi-play-circle"></i><span>Watch Video</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
+      
+      <script>
+        document.getElementById("scrollBtn").addEventListener("click", function () {
+          window.scrollBy({
+            top: 400, // Adjust scroll distance here
+            left: 0,
+            behavior: 'smooth'
+          });
+        });
+      </script>
+      
 
     </section><!-- /Hero Section -->
 
@@ -747,76 +758,153 @@
 </section><!-- /Features Section -->
 
 
-    <!-- Recent Posts Section -->
-    <section id="recent-posts" class="recent-posts section">
+    <!-- Mental Health Blog Section -->
+<section id="recent-posts" class="recent-posts section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Recent Blog Posts</h2>
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Recent Mental Health Blogs</h2>
+  </div><!-- End Section Title -->
 
-      </div><!-- End Section Title -->
+  <div class="container">
+    <div class="row gy-5">
 
-      <div class="container">
+      <!-- Blog 1 -->
+      <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="post-box">
+          <div class="post-img">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&h=400&q=80" class="img-fluid" alt="Mental Health Awareness" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
 
-        <div class="row gy-5">
-
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Tue, December 12</span>
-                <span class="post-author"> / Julia Parker</span>
-              </div>
-              <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis</h3>
-              <p>Illum voluptas ab enim placeat. Adipisci enim velit nulla. Vel omnis laudantium. Asperiores eum ipsa est officiis. Modi qui magni est...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
           </div>
-
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Fri, September 05</span>
-                <span class="post-author"> / Mario Douglas</span>
-              </div>
-              <h3 class="post-title">Et repellendus molestiae qui est sed omnis</h3>
-              <p>Voluptatem nesciunt omnis libero autem tempora enim ut ipsam id. Odit quia ab eum assumenda. Quisquam omnis doloribus...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
+          <div class="meta">
+            <span class="post-date">Mon, April 01</span>
+            <span class="post-author"> / Dr. Nina Thompson</span>
           </div>
-
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Tue, July 27</span>
-                <span class="post-author"> / Lisa Hunter</span>
-              </div>
-              <h3 class="post-title">Quia assumenda est et veritati</h3>
-              <p>Quia nam eaque omnis explicabo similique eum quaerat similique laboriosam. Quis omnis repellat sed quae consectetur magnam...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-4.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Tue, Sep 16</span>
-                <span class="post-author"> / Mario Douglas</span>
-              </div>
-              <h3 class="post-title">Pariatur quia facilis similique deleniti</h3>
-              <p>Et consequatur eveniet nam voluptas commodi cumque ea est ex. Aut quis omnis sint ipsum earum quia eligendi...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
+          <h3 class="post-title">Understanding Anxiety: Signs & Coping Strategies</h3>
+          <p>Explore how anxiety manifests, what causes it, and simple strategies to manage daily stress...</p>
+          <a href="#" class="readmore stretched-link" data-bs-toggle="modal" data-bs-target="#blog1"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
         </div>
-
       </div>
 
-    </section><!-- /Recent Posts Section -->
+      <!-- Blog 2 -->
+      <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="post-box">
+          <div class="post-img">
+            <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" class="img-fluid" alt="Mental Health Self Care" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+
+
+          </div>
+          
+          <div class="meta">
+            <span class="post-date">Wed, March 20</span>
+            <span class="post-author"> / Alex Carter</span>
+          </div>
+          <h3 class="post-title">The Power of Self-Care in Mental Wellbeing</h3>
+          <p>Discover why small acts of self-kindness can bring big mental health benefits...</p>
+          <a href="#" class="readmore stretched-link" data-bs-toggle="modal" data-bs-target="#blog2"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Blog 3 -->
+      <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="post-box">
+          <div class="post-img">
+            <img src="https://images.unsplash.com/photo-1515191107209-c28698631303?auto=format&fit=crop&w=600&h=400&q=80" class="img-fluid" alt="Therapy Session" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+
+          </div>
+          
+          <div class="meta">
+            <span class="post-date">Fri, February 16</span>
+            <span class="post-author"> / Lisa Hunter</span>
+          </div>
+          <h3 class="post-title">Why Therapy Isn’t Just for Crisis Moments</h3>
+          <p>Therapy can benefit anyone — not just in hard times. Here’s what you might gain from it...</p>
+          <a href="#" class="readmore stretched-link" data-bs-toggle="modal" data-bs-target="#blog3"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Blog 4 -->
+      <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="800">
+        <div class="post-box">
+          <div class="post-img">
+            <img src="https://images.unsplash.com/photo-1523978591478-c753949ff840?auto=format&fit=crop&w=600&h=400&q=80" class="img-fluid" alt="Mental Health at Work" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+
+          </div>
+          <div class="meta">
+            <span class="post-date">Sun, January 28</span>
+            <span class="post-author"> / Mario Douglas</span>
+          </div>
+          <h3 class="post-title">Mental Health at Work: Creating a Safe Space</h3>
+          <p>Work-related stress is real. Here’s how to build a healthy culture and mindset...</p>
+          <a href="#" class="readmore stretched-link" data-bs-toggle="modal" data-bs-target="#blog4"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section><!-- /Recent Posts Section -->
+
+<!-- Blog Popups -->
+<!-- Blog 1 Modal -->
+<div class="modal fade" id="blog1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-4">
+      <div class="modal-header">
+        <h5 class="modal-title">Understanding Anxiety: Signs & Coping Strategies</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Anxiety is one of the most common mental health conditions worldwide. Symptoms include racing thoughts, restlessness, sleep disturbances, and more. Fortunately, practices like mindfulness, physical activity, and cognitive behavioral techniques can help. This article explores practical ways to manage anxiety effectively...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Blog 2 Modal -->
+<div class="modal fade" id="blog2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-4">
+      <div class="modal-header">
+        <h5 class="modal-title">The Power of Self-Care in Mental Wellbeing</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Self-care isn’t selfish—it’s essential. From taking a walk, to journaling, to getting enough sleep, small acts of care accumulate and build resilience. This blog dives into daily rituals and boundaries that protect your mental wellness...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Blog 3 Modal -->
+<div class="modal fade" id="blog3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-4">
+      <div class="modal-header">
+        <h5 class="modal-title">Why Therapy Isn’t Just for Crisis Moments</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Many people think therapy is only for when things go wrong. In reality, it’s a proactive step toward better mental health. It helps you process emotions, improve relationships, and gain clarity. Here’s why you should consider it...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Blog 4 Modal -->
+<div class="modal fade" id="blog4" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-4">
+      <div class="modal-header">
+        <h5 class="modal-title">Mental Health at Work: Creating a Safe Space</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Companies need to prioritize mental wellbeing. Encouraging breaks, checking in on employees, and fostering open conversations make all the difference. Learn how leaders and peers alike can promote a healthy workplace...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   </main>
 
