@@ -8,3 +8,8 @@
 
 //after it database connectivty - download mongodb and mongodb compass then run below command
 1.npm i mongoose
+
+
+//open new terminal for ml model
+python model.py
+python app.py
