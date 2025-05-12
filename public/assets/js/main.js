@@ -170,121 +170,103 @@
 
 let map;
 
-    function initMap() {
-      map = L.map('map').setView([0, 0], 8); // Default center and zoom level
+function initMap() {
+  map = L.map('map').setView([0, 0], 8); // Default center and zoom level
 
-      // Use a free tileset from OpenStreetMap
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-      }).addTo(map);
-    }
-    function findNearestLocation() {
-    // Check if the browser supports geolocation
-    if ("geolocation" in navigator) {
-      // Get the user's location
-      navigator.geolocation.getCurrentPosition(function (position) {
-        const userLat = position.coords.latitude;
-        const userLon = position.coords.longitude;
+  // Use a free tileset from OpenStreetMap
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+  }).addTo(map);
+}
 
-        // Define a list of locations with their coordinates
-        const locations = [
-          { name: "Arihant E Recycling Pvt Ltd", lat: 21.548407, lon: 74.476746},
-          { name: "Eco-Recycling Ltd", lat: 19.630951, lon: 72.909126 },
-          { name: "E-Incarnation Recycling Pvt. Ltd", lat: 19.809900, lon: 72.744553, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Evergreen Recyclekaro India Pvt. Ltd", lat: 19.673910, lon: 73.075940, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Hi-Tech Recycling (I) Pvt. Ltd", lat: 18.555888, lon: 73.891957, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Justdispose Recycling Pvt Ltd", lat: 19.445070, lon: 72.823600, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Pranam Enterprises", lat: 18.445520, lon: 73.946010, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Techeco E-Waste Namo LLP", lat: 20.097040, lon: 73.813220, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Threco Recycling LLP", lat: 18.972200, lon: 73.438300, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "WE-The Recycling Company", lat: 19.336020, lon: 73.066380, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "ECO Friend Industries", lat: 19.085900, lon: 73.024900, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "A. S. ENTERPRISES", lat: 19.067110, lon: 72.901550, lnk: "https://maps.app.goo.gl/iwiaqq5zwGqqXqQx9" },
-          { name: "Hi-Tech Recycling (I) Pvt. Ltd", lat: 18.703330, lon: 73.787020, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Alfa Trading Co", lat: 19.106809, lon:72.892686, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Aman Trading Co", lat: 19.092890, lon: 72.882780, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Ambar Enterprises", lat: 18.453640, lon: 73.918100, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Amiable Electroning Pvt. Ltd.", lat: 19.131577, lon: 72.891418, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Anand Computer System", lat: 18.587996, lon: 73.784014, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Ancus India Reprocessing Pvt. Ltd", lat: 19.434700, lon: 72.856750, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Aqsa Stamping", lat: 19.097590, lon: 73.065850, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "ARSH RECYCLING PRIVATE LIMITED", lat: 18.749730, lon: 74.236310, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Asquare Industrial Solutions", lat: 18.789500, lon: 73.344800, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Avis Technoways", lat: 18.202444, lon: 76.042483, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Baban Plastic", lat: 19.869680, lon: 75.223910, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Bharat E Waste Recycling Co.", lat: 19.420470, lon: 72.856100, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Bhavesh Enterprises", lat: 19.117420, lon: 73.055640, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "BKE RECYCLING", lat: 18.455640, lon: 73.958520, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Bombay Metal Works", lat: 19.117420, lon: 73.055640, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Bombay Recyclers Pvt. Ltd", lat: 19.056690, lon: 73.113030, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Bsqaure E-Waste Recyclers", lat: 19.254040, lon: 72.989930, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "CBS EWaste Recycling Industries", lat: 19.558940, lon: 74.017370, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Chaudhary Metal", lat: 19.183600, lon: 73.043450, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Clean Tech", lat: 19.254930, lon: 73.028590, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Connect Info Solutions India Private Limited", lat: 18.999280, lon: 73.113290, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "CPG Shell Mould & Casting", lat: 17.674999, lon: 74.026001, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "E Clean E Green Recycling", lat: 19.401570, lon: 72.839300, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Earth Sense Recycle Pvt. Ltd.", lat: 19.254930, lon: 73.028590, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Eco Layer E-Waste Recycling", lat: 19.397320, lon: 72.830540, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "ECO RESET PRIVATE LIMITED", lat: 19.213999, lon: 72.824250, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          { name: "Dr. Manoj Dashgupte's Clinic", lat: 18.512660, lon: 73.859700, lnk: "https://maps.app.goo.gl/iyo5e8KQqFTzs66g6" },
-          // Add more locations here
-        ];
+function findNearestLocation() {
+  // Check if the browser supports geolocation
+  if ("geolocation" in navigator) {
+    // Get the user's location
+    navigator.geolocation.getCurrentPosition(function (position) {
+      const userLat = position.coords.latitude;
+      const userLon = position.coords.longitude;
 
-        // Function to calculate distance using the Haversine formula
-        function calculateDistance(lat1, lon1, lat2, lon2) {
-          const R = 6371; // Earth's radius in kilometers
-          const dLat = (lat2 - lat1) * (Math.PI / 180);
-          const dLon = (lon2 - lon1) * (Math.PI / 180);
-          const a =
-            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
-            Math.sin(dLon / 2) * Math.sin(dLon / 2);
-          const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-          return R * c; // Distance in kilometers
-        }
+      // Define a list of locations with their coordinates
+      const locations = [
+        { name: "Insight - The Mind Clinic Psychiatrist", lat: 18.459565146604355, lon: 73.90864782883561, lnk: "https://maps.app.goo.gl/2BHCffGHWfkRSStW7" },
+        { name: "Chetas Psychiatry Clinic", lat: 18.49835860298881, lon: 73.95582732883562, lnk: "https://maps.app.goo.gl/iJxenBS1MuGVYUxx9" },
+        { name: "Dr Amar Shinde Psychiatrist", lat: 18.49946847615545, lon: 73.94058199999999, lnk: "https://maps.app.goo.gl/5Y8Aoqnjcxyswxv7A" },
+        { name: "Dr Kishor Jadhavar | Psychiatrist", lat: 18.523547027748275, lon: 73.93363911534256, lnk: "https://maps.app.goo.gl/nppbwyF66bP3n7Ym6" },
+        { name: "Dr Prakash Bhambure Psychiatry", lat: 18.487441641135007, lon: 73.85700991349309, lnk: "https://maps.app.goo.gl/rMwV68TMfaJDXhQeA" },
+        { name: "Heart to Heart Counseling Center", lat: 18.506309093776114, lon: 73.90650848650691, lnk: "https://maps.app.goo.gl/mfjA83H8TbKungwt9" },
+        { name: "SMART NEURO-PSYCHIATRY CLINIC", lat: 18.534026978821956, lon: 73.87854256931487, lnk: "https://maps.app.goo.gl/QeeEE1WasADWxRZm9" },
+        { name: "Dr P K Chakraborty", lat: 18.48591341843599, lon: 73.88714698465743, lnk: "https://maps.app.goo.gl/BhXpLyZAUtEsWADo9" },
+        { name: "Dr.Niket Kasar- Best Psychiatrist In Pune", lat: 18.5095833899809, lon: 73.84840491534256, lnk: "https://maps.app.goo.gl/iiicqRB3hs3KVfb86" },
+        { name: "Dr Sushil Deshmukh MD Psychiatry", lat: 18.502443501159007, lon: 73.80968135767128, lnk: "https://maps.app.goo.gl/r5Nqz7DUtkvUo8MZ7" },
+        { name: "Pune Counseling and Therapy", lat: 18.504808528325764, lon: 73.92990917116437, lnk: "https://maps.app.goo.gl/WcZTDGMk5bvDCCAJ9" },
+        { name: "Dr Prakash Bhambure", lat: 18.478364401846, lon: 73.89025869999998, lnk: "https://maps.app.goo.gl/wvRkoLAEPmzeghwr5" },
+        { name: "Dr Swapnil Deshmukh MBBS,MD", lat: 18.515958988705933, lon: 73.84187174417819, lnk: "https://maps.app.goo.gl/VbkpwFdJd5ZpyfkP6" },
+        { name: "Therapy by Dr. Sukanya Biswas", lat: 18.46198550836309, lon: 73.91483447116437, lnk: "https://maps.app.goo.gl/zG9ct6NZRJSBygJM9" },
+        { name: "Mann ki baat - Psychiatrist", lat: 18.516048882484874, lon: 73.84355175767128, lnk: "https://maps.app.goo.gl/gcgDh8VjCeY68EYM7" },
+        { name: "The Beautiful Mind - Specialty Psychiatry Clinic", lat: 18.50170287889282, lon: 73.81588814232872, lnk: "https://maps.app.goo.gl/2RRa75bAUJYPecQE7" }
+      ];
 
-        // Find the nearest location
-        let nearestLocation;
-        let nearestDistance = Infinity;
+      // Convert degrees to radians
+      function toRadians(degrees) {
+        return degrees * Math.PI / 180;
+      }
 
-        locations.forEach((location) => {
-          const distance = calculateDistance(userLat, userLon, location.lat, location.lon);
-          if (distance < nearestDistance) {
-            nearestDistance = distance;
-            nearestLocation = location;
-          }
-        });
+      // Haversine formula
+      function calculateDistance(lat1, lon1, lat2, lon2) {
+        const R = 6371; // Earth's radius in kilometers
+        const toRad = (deg) => deg * (Math.PI / 180); // convert degrees to radians
+      
+        const dLat = toRad(lat2 - lat1);
+        const dLon = toRad(lon2 - lon1);
+      
+        const a =
+          Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+          Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+          Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return R * c; // Distance in kilometers
+      }
+      
 
-        // Display the nearest location and its distance
-        const resultDiv = document.getElementById("result");
-        resultDiv.innerHTML = `<p> Nearest Location: ${nearestLocation.name}</p> <p>Distance: ${nearestDistance.toFixed(2)} km</p> <a href= "${nearestLocation.lnk}" target="_blank"> Google maps</a>`;
+      let nearestLocation;
+      let nearestDistance = Infinity;
 
-        map.setView([nearestLocation.lat, nearestLocation.lon], 12); // Zoom level may need adjustment
-          L.marker([nearestLocation.lat, nearestLocation.lon]).addTo(map)
-            .bindPopup(nearestLocation.name)
-            .openPopup();
-      }, function (error) {
-        // Handle geolocation errors
-        switch (error.code) {
-          case error.PERMISSION_DENIED:
-            alert("User denied the request for geolocation.");
-            break;
-          case error.POSITION_UNAVAILABLE:
-            alert("Location information is unavailable.");
-            break;
-          case error.TIMEOUT:
-            alert("The request to get user location timed out.");
-            break;
-          case error.UNKNOWN_ERROR:
-            alert("An unknown error occurred.");
-            break;
+      locations.forEach((location) => {
+        const distance = calculateDistance(userLat, userLon, location.lat, location.lon);
+        if (distance < nearestDistance) {
+          nearestDistance = distance;
+          nearestLocation = location;
         }
       });
-    } else {
-      alert("Geolocation is not supported by this browser.");
-    }
-  }
 
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = `<p>Nearest Location: ${nearestLocation.name}</p><p>Distance: ${nearestDistance.toFixed(2)} km</p><a href="${nearestLocation.lnk}" target="_blank">Google Maps</a>`;
+
+      map.setView([nearestLocation.lat, nearestLocation.lon], 12);
+      L.marker([nearestLocation.lat, nearestLocation.lon]).addTo(map)
+        .bindPopup(nearestLocation.name)
+        .openPopup();
+    }, function (error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          alert("User denied the request for geolocation.");
+          break;
+        case error.POSITION_UNAVAILABLE:
+          alert("Location information is unavailable.");
+          break;
+        case error.TIMEOUT:
+          alert("The request to get user location timed out.");
+          break;
+        case error.UNKNOWN_ERROR:
+          alert("An unknown error occurred.");
+          break;
+      }
+    });
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
 
 
