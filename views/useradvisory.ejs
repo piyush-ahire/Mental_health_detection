@@ -629,132 +629,153 @@
 
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
+    <!-- FAQs Section -->
+<section id="faqs" class="testimonials section">
 
-     
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Frequently Asked Questions</h2>
+    <p>Your concerns are valid. Here are some common questions we address through our platform.</p>
+  </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 1
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
+    <style>
+      .faq-item {
+        border-bottom: 1px solid #dee2e6;
+        padding: 15px 0;
+      }
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+      .faq-item h4 {
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1.05rem;
+        color: #333;
+        transition: color 0.2s;
+      }
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+      .faq-item h4:hover {
+        color: #0d6efd;
+      }
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+      .faq-item i {
+        transition: transform 0.3s ease;
+        font-size: 1.1rem;
+        color: #0d6efd;
+      }
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+      .faq-item .answer {
+        display: none;
+        margin-top: 10px;
+        padding-left: 5px;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #444;
+      }
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+      .faq-item.open .answer {
+        display: block;
+      }
 
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
+      .faq-item.open h4 i {
+        transform: rotate(180deg);
+      }
+    </style>
 
-      </div>
+    <!-- FAQ Items -->
+    <div class="faq-item">
+      <h4 class="d-flex justify-content-between align-items-center question-toggle">
+        <span>How do I know if my sadness is temporary or clinical depression?</span>
+        <i class="bi bi-chevron-down"></i>
+      </h4>
+      <p class="answer">Feeling low occasionally is normal, but if it persists beyond two weeks, affects sleep, appetite, or interest in activities, it may indicate clinical depression. Our model helps analyze such patterns and offers insight.</p>
+    </div>
 
-    </section><!-- /Testimonials Section -->
+    <div class="faq-item">
+      <h4 class="d-flex justify-content-between align-items-center question-toggle">
+        <span>Can anxiety and stress impact physical health, and how can I detect early signs?</span>
+        <i class="bi bi-chevron-down"></i>
+      </h4>
+      <p class="answer">Yes, chronic stress and anxiety can lead to headaches, fatigue, and digestive issues. Our system helps flag early symptoms like restlessness, overthinking, and difficulty concentrating using your inputs.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4 class="d-flex justify-content-between align-items-center question-toggle">
+        <span>Is overthinking a symptom of a deeper mental health issue, and how do I manage it?</span>
+        <i class="bi bi-chevron-down"></i>
+      </h4>
+      <p class="answer">Overthinking can be linked to anxiety or OCD. If it's frequent and disruptive, it may need attention. Our analysis helps identify if it's habitual or a deeper issue, along with stress management tips.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4 class="d-flex justify-content-between align-items-center question-toggle">
+        <span>What’s the difference between burnout and depression, and can your platform distinguish them?</span>
+        <i class="bi bi-chevron-down"></i>
+      </h4>
+      <p class="answer">Burnout stems from prolonged stress and exhaustion, often job-related, while depression affects mood, energy, and interest broadly. Our model analyzes contextual cues to differentiate them accurately.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4 class="d-flex justify-content-between align-items-center question-toggle">
+        <span>How do sleep and diet affect mental health, and do your results consider lifestyle?</span>
+        <i class="bi bi-chevron-down"></i>
+      </h4>
+      <p class="answer">Poor sleep and irregular diet can trigger anxiety and mood swings. We include lifestyle-related questions in our model to give a holistic mental health assessment.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4 class="d-flex justify-content-between align-items-center question-toggle">
+        <span>Can your system help if I don’t know what I’m feeling — just feel “off”?</span>
+        <i class="bi bi-chevron-down"></i>
+      </h4>
+      <p class="answer">Absolutely. Many users struggle to define their emotions. Our model interprets subtle signs like irritability, withdrawal, or sleep patterns to suggest possible emotional states and next steps.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4 class="d-flex justify-content-between align-items-center question-toggle">
+        <span>What mental health conditions can your tool screen for, and how accurate is it?</span>
+        <i class="bi bi-chevron-down"></i>
+      </h4>
+      <p class="answer">We primarily screen for depression, anxiety, and stress levels using validated scales and machine learning. It's accurate for early screening but not a replacement for clinical diagnosis.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4 class="d-flex justify-content-between align-items-center question-toggle">
+        <span>Can mental health symptoms change daily? Should I take the test often?</span>
+        <i class="bi bi-chevron-down"></i>
+      </h4>
+      <p class="answer">Yes, emotions fluctuate with life events. If you notice changes in sleep, mood, or energy, retaking the test weekly or during high-stress phases can offer helpful insights.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4 class="d-flex justify-content-between align-items-center question-toggle">
+        <span>Is self-assessment safe? What if the result makes me more anxious?</span>
+        <i class="bi bi-chevron-down"></i>
+      </h4>
+      <p class="answer">Self-assessment builds awareness, but it can trigger emotions. We provide calming guidance and links to mental health support for users feeling overwhelmed by the results.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4 class="d-flex justify-content-between align-items-center question-toggle">
+        <span>How should I interpret my result, and what steps should I take next?</span>
+        <i class="bi bi-chevron-down"></i>
+      </h4>
+      <p class="answer">Your result shows your current mental wellness status. If flagged, consider mindfulness, rest, or speaking to a professional. Our resources page can guide you on the next steps.</p>
+    </div>
+
+  </div>
+</section><!-- /FAQs Section -->
+
+<!-- FAQ Toggle Script -->
+<script>
+  document.querySelectorAll('.question-toggle').forEach(item => {
+    item.addEventListener('click', () => {
+      const parent = item.closest('.faq-item');
+      parent.classList.toggle('open');
+    });
+  });
+</script>
+
 
   </main>
 

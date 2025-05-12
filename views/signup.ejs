@@ -46,7 +46,7 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
       <a href="/" class="logo d-flex align-items-center">
-        <h1 class="sitename">Nova</h1>
+        <h1 class="sitename">MindCare</h1>
       </a>
       <nav id="navmenu" class="navmenu">
         <ul>
@@ -91,10 +91,10 @@
               </div>
   
               <div class="form-group">
-                  <label for="exampleInputphone1">Phone</label>
-                  <input type="number" name="phone" class="form-control" id="exampleInputphone1" autocomplete="off">
+                <label for="exampleInputphone1">Phone</label>
+                <input type="text" name="phone" class="form-control" id="exampleInputphone1" autocomplete="off" pattern="\d{10}" title="Please enter a valid 10-digit phone number" required>
               </div>
-  
+              
               <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
                   <input type="password" name="password" class="form-control" id="exampleInputPassword1">
@@ -118,14 +118,68 @@
 
   </main>
 
+
   <footer id="footer" class="footer light-background">
-    <div class="container copyright text-center">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Nova</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-about">
+            <a href="/" class="logo d-flex align-items-center">
+              <span class="sitename">MindCare</span>
+            </a>
+            <p>MindCare is your mental health companion, helping you track, assess, and improve your emotional well-being through intelligent analysis and support.</p>
+            <div class="social-links d-flex mt-4">
+              <a href="#"><i class="bi bi-twitter-x"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+  
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="#">Mental Health Analysis</a></li>
+              <li><a href="#">Prediction Tools</a></li>
+              <li><a href="#">Wellness Monitoring</a></li>
+              <li><a href="#">Support Resources</a></li>
+              <li><a href="#">Guided Assessments</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contact Us</h4>
+            <p>Pune, Maharashtra</p>
+            <p>India</p>
+            <p class="mt-4"><strong>Phone:</strong> <span>+91 98765 43210</span></p>
+            <p><strong>Email:</strong> <span>support@mindcare.ai</span></p>
+          </div>
+  
+        </div>
       </div>
     </div>
+  
+    <div class="container copyright text-center">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">MindCare</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="#">MindCare Dev Team</a>
+      </div>
+    </div>
+  
   </footer>
+  
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
