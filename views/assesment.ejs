@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MindCare - Mental Health Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f5f8fc;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    form {
+      max-width: 900px;
+      margin: auto;
+    }
+    .question {
+      margin-bottom: 20px;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin: 8px 0;
+    }
+    .result {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .bar {
+      height: 25px;
+      border-radius: 4px;
+      margin: 5px 0;
+    }
+    .depression { background-color: #3f3f99; }
+    .anxiety { background-color: #294e8a; }
+    .stress { background-color: #6bdce0; }
+  </style>
+</head>
+<body>
+  <h1>MindCare</h1>
+  <h2>Mental Health Assessment (DASS-42)</h2>
+
+  <form id="assessmentForm">
+    <!-- Questions -->
+    <div id="questions"></div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="output" class="result" style="display:none;"></div>
+
+  <script>
+    const questions = [
+      "I found myself getting upset by quite trivial things",
+      "I was aware of dryness of my mouth",
+      "I couldn’t seem to experience any positive feeling at all",
+      "I experienced breathing difficulty",
+      "I just couldn't seem to get going",
+      "I tended to over-react to situations",
+      "I had a feeling of shakiness",
+      "I found it difficult to relax",
+      "I found myself in situations that made me so anxious I was most relieved when they ended",
+      "I felt that I had nothing to look forward to",
+      "I found myself getting upset rather easily",
+      "I felt that I was using a lot of nervous energy",
+      "I felt sad and depressed",
+      "I found myself getting impatient when I was delayed",
+      "I had a feeling of faintness",
+      "I felt that I had lost interest in just about everything",
+      "I felt I wasn't worth much as a person",
+      "I felt that I was rather touchy",
+      "I perspired noticeably",
+      "I felt scared without any good reason",
+      "I felt that life wasn't worthwhile",
+      "I found it hard to wind down",
+      "I had difficulty in swallowing",
+      "I couldn't seem to get any enjoyment out of the things I did",
+      "I was aware of the action of my heart",
+      "I felt down-hearted and blue",
+      "I found that I was very irritable",
+      "I felt I was close to panic",
+      "I found it hard to calm down after something upset me",
+      "I feared that I would be 'thrown' by some trivial task",
+      "I was unable to become enthusiastic about anything",
+      "I found it difficult to tolerate interruptions",
+      "I was in a state of nervous tension",
+      "I felt I was pretty worthless",
+      "I was intolerant of anything that kept me from getting on with what I was doing",
+      "I felt terrified",
+      "I could see nothing in the future to be hopeful about",
+      "I felt that life was meaningless",
+      "I found myself getting agitated",
+      "I was worried about situations in which I might panic",
+      "I experienced trembling",
+      "I found it difficult to work up the initiative to do things"
+    ];
+
+    const optionValues = {
+      "NEVER": 0,
+      "SOMETIMES": 1,
+      "OFTEN": 2,
+      "ALMOST ALWAYS": 3
+    };
+
+    const depressionIndices = [3,5,10,13,15,16,20,24,25,30,34,36,37,38]; // 0-based index
+    const anxietyIndices = [1,4,6,7,8,11,14,18,19,21,27,28,32,39];
+    const stressIndices = [0,2,9,12,17,22,23,26,29,31,33,35,40,41];
+
+    function createQuestionHTML() {
+      const qDiv = document.getElementById("questions");
+      questions.forEach((q, i) => {
+        const div = document.createElement("div");
+        div.className = "question";
+        div.innerHTML = `<strong>Q${i+1}.</strong> ${q}<br>` + 
+          Object.entries(optionValues).map(([label, val]) => 
+            `<label><input type="radio" name="q${i}" value="${val}" required> ${label}</label>`
+          ).join('');
+        qDiv.appendChild(div);
+      });
+    }
+
+    function calculateScore(indices, values) {
+      return indices.reduce((sum, i) => sum + parseInt(values[`q${i}`]), 0);
+    }
+
+    function getCategory(score, type) {
+      const thresholds = {
+        Depression: [9, 13, 20, 27],
+        Anxiety: [7, 9, 14, 19],
+        Stress: [14, 18, 25, 33]
+      };
+      const [n, m, mo, s] = thresholds[type];
+      if (score <= n) return "Normal";
+      if (score <= m) return "Mild";
+      if (score <= mo) return "Moderate";
+      if (score <= s) return "Severe";
+      return "Extremely Severe";
+    }
+
+    document.getElementById("assessmentForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const values = Object.fromEntries(formData.entries());
+
+      const depressionScore = calculateScore(depressionIndices, values);
+      const anxietyScore = calculateScore(anxietyIndices, values);
+      const stressScore = calculateScore(stressIndices, values);
+
+      const dLevel = getCategory(depressionScore, "Depression");
+      const aLevel = getCategory(anxietyScore, "Anxiety");
+      const sLevel = getCategory(stressScore, "Stress");
+
+      document.getElementById("output").innerHTML = `
+        <h2>Mental Health Assessment Result</h2>
+        <div style="display:flex; justify-content: space-between;">
+          <div style="width:48%">
+            <h3>Result Overview</h3>
+            <p><strong>Depression</strong>: ${dLevel} (${depressionScore})</p>
+            <div class="bar depression" style="width:${depressionScore*2}%"></div>
+            <p><strong>Anxiety</strong>: ${aLevel} (${anxietyScore})</p>
+            <div class="bar anxiety" style="width:${anxietyScore*2}%"></div>
+            <p><strong>Stress</strong>: ${sLevel} (${stressScore})</p>
+            <div class="bar stress" style="width:${stressScore*2}%"></div>
+          </div>
+          <div style="width:48%">
+            <h3>Suggestion</h3>
+            <p>Try reading these books to improve your mental well-being:</p>
+            <ul>
+              <li><a href="#">The Boy Keeps the Score</a></li>
+              <li><a href="#">The Power of Subconscious Mind</a></li>
+              <li><a href="#">The Mindful Way Through Anxiety</a></li>
+              <li><a href="#">Daring Greatly</a></li>
+            </ul>
+            <p>For Expert Guidance: <a href="/locator">PsyLocator</a></p>
+          </div>
+        </div>
+      `;
+      document.getElementById("output").style.display = "block";
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+
+    createQuestionHTML();
+  </script>
+</body>
+</html>

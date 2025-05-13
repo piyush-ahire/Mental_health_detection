@@ -78,6 +78,14 @@ app.get("/userblog", (req, res) => {
   res.render("userblog.ejs");
 });
 
+
+app.get("/assesment", (req, res) => {
+  res.render("assesment.ejs");
+});
+
+
+
+
 app.get("/profile", (req, res) => {
   res.render("profile.ejs");
 });
