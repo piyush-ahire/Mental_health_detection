@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 import pickle
 
 # Load dataset
-data = pd.read_csv('dataset.csv')  # Ensure dataset.csv is in the same directory
+data = pd.read_csv('dataset1.csv')  # Ensure dataset.csv is in the same directory
 
 # Basic example assuming binary classification
 X = data.drop('target', axis=1)  # Replace 'target' with your label column
