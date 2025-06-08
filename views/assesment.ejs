@@ -306,15 +306,18 @@
     }
 
     function getAdvice(dLevel, aLevel, sLevel) {
-      const levels = [dLevel, aLevel, sLevel];
-      if (levels.includes("Severe") || levels.includes("Extremely Severe")) {
-        return "Based on your responses, we recommend you consult a professional using our <a href='/locator'>PsyLocator</a>.";
-      }
-      if (levels.includes("Moderate")) {
-        return "Consider incorporating regular meditation and mindfulness practices into your daily routine.";
-      }
-      return "Engage in light exercises, maintain a healthy lifestyle, and keep a gratitude journal to boost well-being.";
-    }
+  const levels = [dLevel, aLevel, sLevel];
+
+  if (levels.includes("Extremely Severe") || levels.includes("Severe")) {
+    return `Based on your responses, we recommend you consult a professional using our <a href="/locator" style="color:#357edd; text-decoration:underline;">PsyLocator</a>.`;
+  }
+
+  if (levels.includes("Moderate")) {
+    return "Consider incorporating regular meditation and mindfulness practices into your daily routine.";
+  }
+
+  return "Engage in light exercises, maintain a healthy lifestyle, and keep a gratitude journal to boost well-being.";
+}
 
     document.getElementById("assessmentForm").addEventListener("submit", function(e){
       e.preventDefault();
@@ -329,7 +332,10 @@
       const aLevel = getCategory(anxietyScore, "Anxiety");
       const sLevel = getCategory(stressScore, "Stress");
 
-      const suggestionAdvice = getAdvice(dLevel, aLevel, sLevel);
+      const suggestionAdvice = getAdvice(dLevel, aLevel, sLevel).replace(
+  "PsyLocator",
+  '<a href="/locator" style="color:#357edd; text-decoration:underline;">PsyLocator</a>'
+);
 
       const suggestionHTML = `
         <h3>Suggestion</h3>
@@ -384,6 +390,11 @@
       </div>
     `;
   }).join("")}
+
+  <div style="margin-top: 30px;">
+    <h3 style="color:#3f3f99;">Recommendations</h3>
+    <p>${suggestionAdvice}</p>
+  </div>
 
   <div>
   <h3 style="color:#3f3f99;">Helpful Books</h3>
