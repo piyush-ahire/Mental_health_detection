@@ -353,6 +353,11 @@
       document.getElementById("output").innerHTML = `
         <h2 style="text-align:center; color:#28345c;">MindCare Assessment Result</h2>
 
+        <div style="margin-top: 30px;">
+  <h3 style="color:#3f3f99;">Total Time Taken</h3>
+  <p>${totalTimeTaken} seconds</p>
+</div>
+
   <div style="margin-bottom: 30px;">
     <h3 style="color:#3f3f99;">Overview</h3>
     <p><strong>Depression:</strong> ${dLevel} (${depressionScore}/42)</p>
@@ -552,6 +557,8 @@ if (canvas && canvas.getContext) {
   doc.setTextColor(0, 0, 0);
   y += 12;
 
+  
+
   // Overview
   addSectionTitle("Overview");
   addText(`Depression Level: ${dLevel}`);
@@ -659,6 +666,10 @@ for (let i = 0; i < questions.length; i++) {
   doc.text(`${timePerQuestion[i].split(": ")[1]}`, marginLeft + 170, y);
   y += 6;
 }
+
+addSectionTitle("Total Time Taken");
+addText(`${totalTimeTaken} seconds`);
+y += 5;
 
   // // Time Stats
   // addSectionTitle("Time Summary");
